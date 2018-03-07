@@ -22,7 +22,7 @@ class PigLatinizer
   end
 
   def to_pig_latin(text)
-    text_array = text.split(' ')
+    text_array = text.gsub(/[^a-zA-Z ]/, '').split(' ')
     flipped_array = text_array.collect do |word|
       self.piglatinize(word)
     end
